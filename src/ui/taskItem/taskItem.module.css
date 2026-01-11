@@ -1,0 +1,27 @@
+.notDone {
+    color: red;
+}
+.priority0 {
+    background-color: #ffffff;
+}
+.priority1 {
+    background-color: #ffd7b5;
+}
+.priority2 {
+    background-color: #ffb38a;
+}
+.priority3 {
+    background-color: #ff9248;
+}
+.priority4 {
+    background-color: #ff6700;
+}
+.active {
+    border: 5px solid red !important; /* или толще/ярче */
+    box-shadow: 0 0 10px green; /* добавьте свечение для видимости */
+}
+
+.task {
+    border: 2px solid black;
+    list-style: none;
+}
