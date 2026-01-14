@@ -1,2 +1,2 @@
-export const API_KEY = "c76613f8-7a1c-42c1-8185-c0f7cf796507";
-export const BASE_URL = "https://trelly.it-incubator.app/api/1.0";
+export const API_KEY = import.meta.env.VITE_API_KEY;
+export const BASE_URL = import.meta.env.VITE_BASE_URL;
