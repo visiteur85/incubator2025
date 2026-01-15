@@ -19,7 +19,6 @@ export default Counter;
 const useCounter = (
   startValue = 0,
   startStep: number = 1,
-  autoResetTime = 0,
 ) => {
   const [count, setCount] = useState(startValue);
   const [step, setStep] = useState(startStep);
