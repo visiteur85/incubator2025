@@ -65,7 +65,7 @@ export const getTask = async (
 
 export const getTasks = async (): Promise<TaskListItem[]> => {
   try {
-    const response = await fetch(`${BASE_URL}/boards/tasks`, {
+    const response = await fetch(`${BASE_URL}boards/tasks`, {
       headers: {
         "api-key": API_KEY,
       },
