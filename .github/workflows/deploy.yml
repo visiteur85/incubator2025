@@ -1,24 +1,26 @@
-name: trello deploy
-
+name: Deploy Vite to Pages
 on:
   push:
-    branches: [main]
-
-
+    branches: [ main ]
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
-
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm install
+          cache: 'npm'  # кэш, но фиксим баг
+      - name: Clean install
+        run: |
+          rm -rf node_modules package-lock.json
+          npm install
       - run: npm run build
+        env:
+          VITE_API_KEY: ${{ secrets.VITE_API_KEY }}
+          VITE_BASE_URL: ${{ secrets.VITE_BASE_URL }}
+      - uses: actions/configure-pages@v4
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: dist  # для Vite
       - uses: actions/deploy-pages@v4
-
