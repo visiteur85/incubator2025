@@ -2,6 +2,10 @@ name: Deploy Vite to Pages
 on:
   push:
     branches: [ main ]
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -10,7 +14,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'  # кэш, но фиксим баг
       - name: Clean install
         run: |
           rm -rf node_modules package-lock.json
@@ -22,5 +25,6 @@ jobs:
       - uses: actions/configure-pages@v4
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist  # для Vite
+          path: dist
       - uses: actions/deploy-pages@v4
+
