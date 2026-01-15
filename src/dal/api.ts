@@ -43,7 +43,7 @@ export const getTask = async (
 ): Promise<TaskData> => {
   try {
     const response = await fetch(
-      `${BASE_URL}/boards/${boardId}/tasks/${taskID}`,
+      `${BASE_URL}boards/${boardId}/tasks/${taskID}`,
       {
         headers: {
           "api-key": API_KEY,
