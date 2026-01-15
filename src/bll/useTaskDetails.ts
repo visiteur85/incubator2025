@@ -22,6 +22,7 @@ export function useTaskDetails(
     }
   }, [selectedTaskId, boardId]);
 
+
   useEffect(() => {
     fetchTask();
   }, [fetchTask]);
